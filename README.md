@@ -1,2 +1,2 @@
 # infrapulse
- Build an automated data pipeline that ingests raw infrastructure asset, failure, maintenance, sensor, and citizen-reported data from CSV and JSON sources, cleans and transforms it using shell scripts and Python, and loads it into a PostgreSQL data warehouse.
+Build an automated data pipeline that ingests raw infrastructure asset, failure, maintenance, sensor, and citizen-reported data from CSV and JSON sources, cleans and transforms it using shell scripts and Python, and loads it into a PostgreSQL data warehouse. The pipeline is orchestrated using Apache Airflow, monitored with logs and alerts, and designed to support reliability analytics such as service downtime, failure recurrence, and maintenance effectiveness.
