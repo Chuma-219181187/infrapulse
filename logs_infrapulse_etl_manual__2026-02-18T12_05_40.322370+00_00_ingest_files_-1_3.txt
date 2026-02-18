@@ -1,0 +1,18 @@
+::group::Log message source detailssources=["wasb://airflow-logs/wasb-clo38gd6u016a01nbjcvksz7e/cmlrz0yos97zh01jmkt890i3w/dag_id=infrapulse_etl/run_id=manual__2026-02-18T12:05:40.322370+00:00/task_id=ingest_files/attempt=3.log"] 
+::endgroup::
+[2026-02-18T12:16:30.598815Z] INFO - DAG bundles loaded: main
+[2026-02-18T12:16:30.949388Z] INFO - Filling up the DagBag from /tmp/airflow/dag_bundles/astro/main/dags/2026-02-18T11:58:17.8565277Z/dags/infrapulse_etl_dag.py
+[2026-02-18T12:16:31.203566Z] WARNING - The `airflow.operators.bash.BashOperator` attribute is deprecated. Please use `'airflow.providers.standard.operators.bash.BashOperator'`.category=DeprecatedImportWarning 
+[2026-02-18T12:16:31.203759Z] WARNING - The `airflow.operators.python.PythonOperator` attribute is deprecated. Please use `'airflow.providers.standard.operators.python.PythonOperator'`.category=DeprecatedImportWarning 
+[2026-02-18T12:16:31.249768Z] INFO - TaskInstance Details: dag_id=infrapulse_etl task_id=ingest_files dagrun_id=manual__2026-02-18T12:05:40.322370+00:00 map_index=-1 run_start_date=2026-02-18T12:16:28.477396Z try_number=3 op_classpath=["airflow.providers.standard.operators.bash.BashOperator"] 
+[2026-02-18T12:16:31.251073Z] INFO - Tmp dir root location: /tmp
+[2026-02-18T12:16:31.251499Z] INFO - Running command: ['/usr/bin/bash', '-c', '\n        set -e\n        BASE_DIR="${AIRFLOW_DATA_DIR:-/opt/airflow/data}"\n        mkdir -p "$BASE_DIR/staging" "$BASE_DIR/archive"\n\n        RAW_DIR=$(find "$BASE_DIR/raw" -maxdepth 1 -type d -printf \'%T@ %p\\n\' 2>/dev/null | sort -rn | head -1 | cut -d\' \' -f2- || echo "")\n\n        if [ -n "$RAW_DIR" ] && [ -d "$RAW_DIR" ] && [ "$(ls -A "$RAW_DIR" 2>/dev/null)" ]; then\n            cp "$RAW_DIR"/* "$BASE_DIR/staging/" 2>/dev/null || true\n            echo "Files ingested successfully"\n        else\n            echo "No raw data found. Creating empty staging dir (Normal for Astronomer test)."\n            mkdir -p "$BASE_DIR/staging"\n        fi\n        ']
+[2026-02-18T12:16:31.252510Z] INFO - Output:
+[2026-02-18T12:16:31.256117Z] INFO - mkdir: cannot create directory ‘/opt/airflow’: Permission denied
+[2026-02-18T12:16:31.256235Z] INFO - mkdir: cannot create directory ‘/opt/airflow’: Permission denied
+[2026-02-18T12:16:31.256568Z] INFO - Command exited with return code 1
+[2026-02-18T12:16:31.256979Z] ERROR - Task failed with exceptionAirflowException: Bash command failed. The command returned a non-zero exit code 1.
+    File /usr/local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py, line 1068 in run
+    File /usr/local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py, line 1477 in _execute_task
+    File /usr/local/lib/python3.12/site-packages/airflow/sdk/bases/operator.py, line 417 in wrapper
+    File /usr/local/lib/python3.12/site-packages/airflow/providers/standard/operators/bash.py, line 227 in execute

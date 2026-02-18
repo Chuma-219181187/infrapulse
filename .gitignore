@@ -1,0 +1,53 @@
+# Environment files
+.env
+.env.local
+.env.prod
+.env.production
+.env.*.local
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Logs
+logs/
+*.log
+airflow-webserver.log
+
+# Data
+data/
+backups/
+archive/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Airflow
+airflow_home/
+airflow.db
+unittests.db
+
+# Database exports
+*.sql
+*.dump
+*.backup
+
+# Secrets
+secrets/
+*.key
+*.pem
+*.crt

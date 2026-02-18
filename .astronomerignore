@@ -1,0 +1,52 @@
+# Astronomer - files to exclude from deployment
+
+# Environment files
+.env
+.env.prod
+.env.example
+
+# Git
+.git
+.gitignore
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+*.eggs
+.Python
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data
+data/raw/*
+data/staging/*
+data/archive/*
+
+# Logs
+logs/*
+
+# Backups
+backups/*
+
+# Documentation
+*.md
+docs/
+
+# Tests
+tests/
+test_*.py
+
+# Docker
+docker-compose.yml
+docker-compose.*.yml
